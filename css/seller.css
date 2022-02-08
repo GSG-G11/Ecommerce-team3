@@ -1,5 +1,23 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.products .products-container .box {
+  position: relative;
+}
+.products .products-container .box::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f2ed";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #2264d1;
+  cursor: pointer;
+}
+.products .products-container .box::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f044";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #2264d1;
+  cursor: pointer;
 }
