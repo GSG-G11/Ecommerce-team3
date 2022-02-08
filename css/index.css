@@ -67,6 +67,11 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+.nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .nav img {
   max-width: 100%;
   width: 130px;
@@ -97,17 +102,21 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 .nav .user-type button {
-  color: #2264d1;
+  color: black;
   background-color: white;
-  border: 2px solid #2264d1;
+  border: 2px solid black;
   width: 100px;
   font-weight: bold;
   padding: 5px;
   border-radius: 6px;
   margin: 0 4px;
   cursor: pointer;
+}
+.nav .user-type a {
+  color: black;
 }
 .nav .user-type button.mycart {
   position: relative;
@@ -127,7 +136,7 @@ nav {
 }
 .nav .user-icon {
   margin-left: 10px;
-  color: #2264d1;
+  color: black;
 }
 /* -----------------------------------------------------------------
     Header Style
@@ -136,6 +145,7 @@ header img {
   max-width: 100%;
   height: calc(100vh - 80px);
   object-fit: cover;
+  width: 100vw;
 }
 /* -----------------------------------------------------------------
     Options Sections Style
