@@ -78,6 +78,8 @@ if (localStorage.getItem("products")) {
       category: category,
       description: description,
       image: image,
+      inCart: 0,
+      ProductTag: "FoodBowl",
       completed: false,
     };
     // Push Product To Array Of Products
