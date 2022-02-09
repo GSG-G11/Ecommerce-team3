@@ -49,15 +49,6 @@ OnLoadProuNum() // this fun must run firstly
 addtocart();
 
 
-//seller --> add , view , delete , edit ,filter ,search
-//buyer --> view cart , add to cart , delete prod , total price , filter, search
-// with testing and local storge
-
-// ayman--> cart, readme file
-//manar --> add to card , view proudct
-//jehad --> pop up -- add product , edit ,delete
-//mostafa --> filter , check testing
-
 //create add product function
 //1- click add
 //2- pop up widow will display
