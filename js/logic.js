@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "Coat For Dogs",
     price: 50,
-    ImgUrl: " ",
+    image: " ",
     inCart: 0,
     ProductTag: "CoatForDogs",
     category:'Dog'
@@ -12,7 +12,7 @@ const products = [
     id: 2,
     name: "Coat For Dogs",
     price: 50,
-    ImgUrl: " ",
+    image: " ",
     inCart: 0,
     ProductTag: "CoatForDogs",
     category:'Dog'
@@ -21,7 +21,7 @@ const products = [
     id: 3,
     name: "Pet Grooming Brush",
     price: 31,
-    ImgUrl: " ",
+    image: " ",
     inCart: 0,
     ProductTag: "PetGroomingBrush",
     category:'Dog'
@@ -30,7 +30,7 @@ const products = [
     id: 4,
     name: "Food Bowl",
     price: 20,
-    ImgUrl: " ",
+    image: " ",
     inCart: 0,
     ProductTag: "FoodBowl",
     category:'Cat'
@@ -178,16 +178,29 @@ function removefromcart() {
   }
 }
 
+function getDataFromLocalStorage() {
+  let data = window.localStorage.getItem("products");
+  if (data) {
+    let products = JSON.parse(data);
+    addElementsToPageFrom(products);
+  }
+}
+
 OnLoadProuNum(); // this fun must run firstly
 displayCart(); // should display when page load
 addtocart();
 removefromcart();
+getDataFromLocalStorage()
 
 
 if (typeof module !== "undefined") {
-module.exports = {
-    ProductNum,removefromcart,
-    products
+  module.exports = {
+    ProductNum,
+    totalCost,
+    removefromcart,
+    products,
+    prodNum,
+    cartCost
 }
 }
 
