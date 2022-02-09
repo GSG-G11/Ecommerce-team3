@@ -174,8 +174,6 @@ function removefromcart() {
      window.localStorage.removeItem('ProductsInCart');
      window.localStorage.removeItem('ProductNum');
      window.localStorage.removeItem('totalCost');
-
-     window .location.reload();
     });
   }
 }
