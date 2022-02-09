@@ -49,7 +49,6 @@ const products = [
 // Count Number of product inside a user cart
 function addtocart() {
   let addtocart = document.querySelectorAll(".add-to-cart-btn");
-  let cards = document.querySelectorAll(".card");
 
   for (let i = 0; i < addtocart.length; i++) {
     addtocart[i].addEventListener("click", (c) => {
@@ -93,7 +92,7 @@ function SetItemProd(product) {
     if (CartItem[product.id] == undefined) {
       CartItem = {
         ...CartItem,
-        [product.id]: product,
+        [product.id]: product
       };
     }
     CartItem[product.id].inCart += 1; // == products['id']
@@ -135,9 +134,9 @@ function displayCart() {
     Object.values(cartProducts).map((item) => {
       ProductsCartHolder.innerHTML += `
             <div class="card">
-              <i class="bx bx-x"></i>
+            <button class="" style="cursor: pointer; border: none; display: flex;"><a class="to-cart-a">  <i class="bx bx-x delete_btn"></i> </a></button>
               <img
-                src="images/${item.ProductTag}.png"
+                src="images/${item.id}.png"
                 class="card-img-top"
                 alt="..."
               />
@@ -166,11 +165,31 @@ function displayCart() {
   }
 }
 
+//Remove Product form cart*************************
+function removefromcart() {
+  let removefromcart = document.querySelectorAll(".delete_btn");
+  let cards = document.querySelectorAll(".card");
+  for (let i = 0; i < removefromcart.length; i++) {
+    removefromcart[i].addEventListener("click", (c) => {
+     window.localStorage.removeItem('ProductsInCart');
+     window.localStorage.removeItem('ProductNum');
+     window.localStorage.removeItem('totalCost');
+
+     window .location.reload();
+    });
+  }
+}
+
 OnLoadProuNum(); // this fun must run firstly
 displayCart(); // should display when page load
 addtocart();
+removefromcart();
 
-// module.exports = {
-//     ProductNum,
-//     products
-// }
+
+if (typeof module !== "undefined") {
+module.exports = {
+    ProductNum,
+    products
+}
+}
+
