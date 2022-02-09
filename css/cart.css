@@ -7,7 +7,8 @@
     background-color: #E4E9F7;
 }
 .container.cart-items-holder {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     max-width: 1170px;
     width: 100%;
     padding-right: 30px;
@@ -43,6 +44,8 @@
 }
 .cart-items-holder .card-group {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .container.cart-items-holder .card-body {
     flex: 1 1 auto; 
@@ -50,7 +53,7 @@
     padding: 1.25rem;
   }
   .cart-items-holder .card {
-    width: calc(100%/4);
+    width: calc(100%/3);
     margin-left: 1%;
     position: relative;
     display: flex;
@@ -61,6 +64,7 @@
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
+    margin-bottom: 2%;
 }
 .cart-items-holder.reating-holder {
     display: flex;
