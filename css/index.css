@@ -21,7 +21,9 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-
+.to-cart-a{
+ color: #fff;
+}
 /* Extra small devices  */
 @media (max-width: 575.98px) {
   .container {
@@ -81,7 +83,7 @@ nav {
 }
 .nav .search-input [type="search"] {
   width: 400px;
-  padding: 8px;
+  padding: 12px;
   border-radius: 18px;
   outline: none;
   border: none;
@@ -137,6 +139,7 @@ nav {
 .nav .user-icon {
   margin-left: 10px;
   color: black;
+  font-size: 30px;
 }
 /* -----------------------------------------------------------------
     Header Style
@@ -182,12 +185,12 @@ header img {
 }
 .options-section .options .selections select {
   border: 1px solid #ccc;
-  width: 100px;
-  padding: 4px 4px;
+  width: 140px;
+  padding: 8px 4px;
   color: #666;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 13px;
 }
 /* -----------------------------------------------------------------
     Products Sections Style
@@ -234,7 +237,7 @@ header img {
   margin: 15px 0;
 }
 .products .products-container .box .product-info .start-add-to-cart span {
-  color: yellow;
+  color: #FB8200;
 }
 .products .products-container .box .product-info .start-add-to-cart button {
   border: none;
