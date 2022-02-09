@@ -9,9 +9,16 @@
 - [Manar Abedalhadi](https://github.com/manar-abed)
 
 
-## ✧ The Description of Kazo Store Website
+## ✧ The Description of Kazo Store Website:
 Kazo store provides all the products you need for your pet, where you can find toys, food and clothes for pets.
 You can do shopping and add products to your cart and then complete the online payment.
+
+## ✧ User Journey:
+* The user will find a button on the top of the home page that give him the abilty to go to the seller page.
+* The buyer can search about an item name from the search box in thr hedear.
+* The user can filter the products by the price or by the category.
+* The seller can add a product by clicking on add product button in the top of the page. 
+* The seller can edit or remove any of his products.
 
 
 ## ✧ User Stories:
