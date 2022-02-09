@@ -75,6 +75,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Nunito Sans", sans-serif;
 }
 @media (max-width: 992px) {
   .nav {
@@ -214,6 +215,22 @@ header img {
   cursor: pointer;
   margin-right: 13px;
 }
+h3.heading-h3 {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  font-size: 37px;
+  width: 30%;
+}
+footer {
+  width: 100%;
+  background: #E4E9F7;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
 /* -----------------------------------------------------------------
     Products Sections Style
 --------------------------------------------------------------------*/
@@ -263,7 +280,7 @@ header img {
   font-size: 15px;
 }
 .products .products-container .box .product-info .price {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 900;
   margin: 10px 0;
   display: block;
@@ -286,4 +303,7 @@ header img {
   padding: 10px 0;
   border-radius: 7px;
   font-weight: bold;
+}
+.products .products-container .box .product-info .start-add-to-cart button:hover {
+  background-color: #407fe6;
 }

@@ -1,65 +1,176 @@
-const product = [ 
-    {id : 0,
-    name : "",
-    price : 20,
-    ImgUrl : " ",
-    description : "",
-
-},{
-    id : 0,
-    name : "",
-    price : 20,
-    ImgUrl : " ",
-    description : "",
-},
-{
-    id : 0,
-    name : "",
-    price : 20,
-    ImgUrl : " ",
-    description : "",
-}
+const products = [
+  {
+    id: 1,
+    name: "Coat For Dogs",
+    price: 50,
+    ImgUrl: " ",
+    inCart: 0,
+    ProductTag: "CoatForDogs",
+    category:'Dog'
+  },
+  {
+    id: 2,
+    name: "Coat For Dogs",
+    price: 50,
+    ImgUrl: " ",
+    inCart: 0,
+    ProductTag: "CoatForDogs",
+    category:'Dog'
+  },
+  {
+    id: 3,
+    name: "Pet Grooming Brush",
+    price: 31,
+    ImgUrl: " ",
+    inCart: 0,
+    ProductTag: "PetGroomingBrush",
+    category:'Dog'
+  },
+  {
+    id: 4,
+    name: "Food Bowl",
+    price: 20,
+    ImgUrl: " ",
+    inCart: 0,
+    ProductTag: "FoodBowl",
+    category:'Cat'
+  },
+  {
+    id: 5,
+    name: "Pet Bowl Affiliate",
+    price: 15,
+    ImgUrl: " ",
+    inCart: 0,
+    ProductTag: "PetBowlAffiliate",
+    category:'Cat'
+  },
 ];
-// seler add product
-const addbtn = document.querySelector('.mycart');
-const ProductBox = document.querySelectorAll('.box');
 
-//create add product function
-//1- click add 
-//2- pop up widow will display
-//3- put data inside iputs 
-//4- set item in local storge 
-//5- alrate 'your proudect is created'
-//6- proudct is added
+// Count Number of product inside a user cart
+function addtocart() {
+  let addtocart = document.querySelectorAll(".add-to-cart-btn");
+  let cards = document.querySelectorAll(".card");
 
-// view products
-//1- save item in local storge and array
+  for (let i = 0; i < addtocart.length; i++) {
+    addtocart[i].addEventListener("click", (c) => {
+      ProductNum(products[i]);
+      totalCost(products[i]);
+    });
+  }
+}
 
-// delete product
-//1- get del btn
-//2- remove item
+// exist item in local storge
+function OnLoadProuNum() {
+  let prodNum = localStorage.getItem("ProductNum");
+  if (prodNum) {
+    document.querySelector("nav .cart-count").textContent = prodNum;
+  }
+}
 
-function addProduct(){
-    addbtn.addEventListener('click' , (e)=>{
-        if(e.target.className == 'mycart'){
-           
-        }
+//Sum the Product num *************************
+function ProductNum(product) {
+  let prodNum = localStorage.getItem("ProductNum");
+  prodNum = parseInt(prodNum);
+  if (prodNum) {
+    localStorage.setItem("ProductNum", prodNum + 1);
+    document.querySelector("nav .cart-count").textContent = prodNum + 1;
+  } else {
+    localStorage.setItem("ProductNum", 1);
+    document.querySelector("nav .cart-count").textContent = 1;
+  }
 
-    })
-};
- function deleteProduct(){
+  SetItemProd(product); // to save item in local storge
+}
 
- }
+//Set item product *************************
+function SetItemProd(product) {
+  //setp 3
+  let CartItem = localStorage.getItem("ProductsInCart");
+  CartItem = JSON.parse(CartItem); // to return object ,not string
+  //output : undefined , so ..
+  //count
+  if (CartItem != null) {
+    if (CartItem[product.id] == undefined) {
+      CartItem = {
+        ...CartItem,
+        [product.id]: product,
+      };
+    }
+    CartItem[product.id].inCart += 1; // == products['id']
+  } else {
+    //step 1
+    product.inCart = 1;
+    //setp 2
+    CartItem = {
+      [product.id]: product, //select the product obj and save inside storge with it prop
+    };
+  }
+
+  localStorage.setItem("ProductsInCart", JSON.stringify(CartItem));
+}
+
+//count to total Price *************************
+function totalCost(product) {
+  let cartCost = localStorage.getItem("totalCost");
+
+  if (cartCost != null) {
+    cartCost = parseInt(cartCost);
+    localStorage.setItem("totalCost", cartCost + product.price);
+  } else {
+    localStorage.setItem("totalCost", product.price);
+  }
+}
 
 
-//seller --> add , view , delete , edit ,filter ,search
-//buyer --> view cart , add to cart , delete prod , total price , filter, search 
-// with testing and local storge 
+//Display the Products inside the Cart *************************
+function displayCart() {
+  let cartProducts = localStorage.getItem("ProductsInCart");
+  cartProducts = JSON.parse(cartProducts);
 
-// ayman--> cart, readme file
-//manar --> add to card , view proudct 
-//jehad --> pop up -- add product , edit ,delete 
-//mostafa --> filter , check testing 
+  let cartCost = localStorage.getItem("totalCost");
+  let ProductsCartHolder = document.querySelector(".card-group");
 
-addProduct();
-deleteProduct()
+  if (cartProducts && ProductsCartHolder) {
+    ProductsCartHolder.innerHTML = "";
+    Object.values(cartProducts).map((item) => {
+      ProductsCartHolder.innerHTML += `
+            <div class="card">
+              <i class="bx bx-x"></i>
+              <img
+                src="images/${item.ProductTag}.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h3 class="card-title">${item.name}</h3>
+                <h5>1258 bids, 359 watchers $5.95 for shipping</h5>
+                <p class="card-text">${item.price}$</p>
+                <div class="reating-holder">
+                  <div class="rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                  </div>
+                  <button type="button" class="btn btn-primary">
+                    Checkout
+                  </button>
+                </div>
+              </div>
+            `;
+      let totalPice = (document.querySelector(
+        ".total-price"
+      ).textContent = `${cartCost} $`);
+    });
+  }
+}
+
+OnLoadProuNum(); // this fun must run firstly
+displayCart(); // should display when page load
+addtocart();
+
+// module.exports = {
+//     ProductNum,
+//     products
+// }
