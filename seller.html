@@ -13,7 +13,7 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/index.css">    
-    <link rel="stylesheet" href="css/seller.css">    
+    <link rel="stylesheet" href="css/seller.css">
     <title>Seller Page</title>
 </head>
 <body>
@@ -26,12 +26,30 @@
                 </div>
                 <div class="user-type">
                     <button><a href="index.html">Buyer</a></button>
-                    <button class="mycart">Add Product</button>
+                    <button class="add-product-btn">Add Product</button>
                     <i class="user-icon far fa-user-circle fa-3x"></i>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="add-products-popup">
+        <div class="popup-form">
+            <label for="product-name">Product Name</label>
+            <input type="text" name="product-name" id="product-name">
+            <label for="product-price">Product Price</label>
+            <input type="number" name="product-price" id="product-price">
+            <label for="product-category">Product Category</label>
+            <input type="text" name="product-category" id="product-category">
+            <label for="product-description">Product Description</label>
+            <input name="product-description" id="product-description">
+            <label for="product-image">Upload Product Picture</label>
+            <input type="file" name="product-image" id="product-image">
+            <div class="popup-buttons">
+                <button class="cancel">Cancel</button>
+                <button class="save">Save</button>
+            </div>
+        </div>
+    </div>
     <header>
         <img src="images/header.png" alt="header">
     </header>
@@ -62,7 +80,7 @@
     <section class="products">
         <div class="container">
             <div class="products-container">
-                <div class="box">
+                <div class="box" data-category = 'cat'>
                     <img src="images/1.png" alt="product">
                     <div class="product-info">
                         <h3>Coat For Dogs</h3>
@@ -80,9 +98,63 @@
                         </div> 
                     </div>
                 </div>
+                <div class="box" data-category = 'birds'>
+                    <img src="images/2.png" alt="product">
+                    <div class="product-info">
+                        <h3>Pet Grooming Brush</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias libero est ea ex!</p>
+                        <span class="price">31&dollar;</span>
+                        <div class="start-add-to-cart">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <button class="add-to-cart-btn"><a href="cart.html" class="to-cart-a">Add to Cart</a></button>
+                        </div> 
+                    </div>
+                </div>
+                <div class="box" data-category = 'dog'>
+                    <img src="images/3.png" alt="product">
+                    <div class="product-info">
+                        <h3>Food Bowl</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias libero est ea ex!</p>
+                        <span class="price">20&dollar;</span>
+                        <div class="start-add-to-cart">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <button class="add-to-cart-btn"><a href="cart.html" class="to-cart-a">Add to Cart</a></button>
+                        </div> 
+                    </div>
+                </div>
+                <div class="box" data-category = 'cat'>
+                    <img src="images/4.png" alt="product">
+                    <div class="product-info">
+                        <h3>Pet Bowl Affiliate</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias libero est ea ex!</p>
+                        <span class="price">15&dollar;</span>
+                        <div class="start-add-to-cart">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <button class="add-to-cart-btn"><a href="cart.html" class="to-cart-a">Add to Cart</a></button>
+                        </div> 
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <script src="js/logic.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

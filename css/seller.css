@@ -1,3 +1,6 @@
+/* -----------------------------------------------------------------
+    Products Sections Style For Seller Page
+--------------------------------------------------------------------*/
 .products .products-container .box {
   position: relative;
 }
@@ -20,4 +23,63 @@
   right: 0;
   color: #2264d1;
   cursor: pointer;
+}
+/* -----------------------------------------------------------------
+    PopUp Style For Add Seller Products
+--------------------------------------------------------------------*/
+.add-products-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.add-products-popup.show {
+  display: block;
+}
+.add-products-popup .popup-form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  background-color: white;
+  padding: 30px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9px;
+}
+.add-products-popup .popup-form label {
+  font-weight: bold;
+  margin: 15px 0 3px 0;
+}
+.add-products-popup .popup-form input,
+.add-products-popup .popup-form textarea {
+  border: 1px solid #ddd;
+  padding: 9px;
+  outline: none;
+  border-radius: 7px;
+  resize: none;
+}
+.add-products-popup .popup-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
+}
+.add-products-popup .popup-buttons > button {
+  background-color: #2264d1;
+  color: white;
+  border: none;
+  width: 90px;
+  padding: 10px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.add-products-popup .popup-buttons > button:hover {
+  background-color: #0d449cef;
 }
