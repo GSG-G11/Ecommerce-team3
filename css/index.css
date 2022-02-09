@@ -192,6 +192,22 @@ header img {
   cursor: pointer;
   margin-right: 13px;
 }
+h3.heading-h3 {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  font-size: 37px;
+  width: 30%;
+}
+footer {
+  width: 100%;
+  background: #E4E9F7;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
 /* -----------------------------------------------------------------
     Products Sections Style
 --------------------------------------------------------------------*/

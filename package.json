@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test" : "jest",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
     "url": "https://github.com/GSG-G11/Ecommerce-team3/issues"
   },
   "homepage": "https://github.com/GSG-G11/Ecommerce-team3#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^27.5.1"
   }
 }

@@ -44,7 +44,6 @@
 }
 .cart-items-holder .card-group {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
   }
   .container.cart-items-holder .card-body {
@@ -115,6 +114,7 @@
     text-align: right;
     padding: 10px;
     color: #d40000;
+    z-index: 99;
 }
 .cart-items-holder h5 {
     margin-bottom: 6%;
