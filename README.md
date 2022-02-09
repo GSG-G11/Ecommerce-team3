@@ -5,4 +5,4 @@
 ### Technology we used
 - HTML → to build the structure of the pages
 - CSS → to style the application
--JS (DOM - Local Storge - testing) → to make the user able to buy and sell in the store
+- JS (DOM - Local Storge - testing) → to make the user able to buy and sell in the store
