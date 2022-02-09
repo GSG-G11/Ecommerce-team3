@@ -119,6 +119,10 @@
 .cart-items-holder img.card-img-top {
     position: relative;
 }
+.reating-holder {
+    display: flex;
+    justify-content: space-between;
+}
   /* media */
 
   /* // Extra small devices (portrait phones, less than 576px) */
