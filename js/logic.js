@@ -178,12 +178,21 @@ function removefromcart() {
   }
 }
 
+function listview (){
+  let list = document.querySelector('.list')
+  let productscontainer = document.querySelector('.products-container')
+  list.addEventListener('click' , () =>{
+    productscontainer.style.flexDirection = "column";
+  })
+}
+
 
 OnLoadProuNum(); // this fun must run firstly
 displayCart(); // should display when page load
 addtocart();
 removefromcart();
-// getDataFromLocalStorage()
+listview();
+
 
 
 if (typeof module !== "undefined") {
