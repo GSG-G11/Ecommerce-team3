@@ -13,7 +13,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: #2264d1;
+  font-size: 18px;
+  color: #f23333;
+  padding: 10px;
   cursor: pointer;
 }
 .products .products-container .box::after {
@@ -25,6 +27,8 @@
   right: 0;
   color: #2264d1;
   cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
 }
 /* -----------------------------------------------------------------
     PopUp Style For Add Seller Products

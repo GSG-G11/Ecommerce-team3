@@ -10,6 +10,7 @@ let addProductButton = document.querySelector('.add-product-btn'),
     productBoxes = document.querySelectorAll('.box'),
     allInputs = document.querySelectorAll('.popup-form input'),
     productContainer = document.querySelector('.products-container');
+    list = document.querySelector('span .list');
 
     // Array to Add Prodcuts on it
 let arryofProducts = [];
@@ -132,3 +133,16 @@ if (localStorage.getItem("products")) {
     arryofProducts = arryofProducts.filter((product) => product.id != productId);
     addDataToLocalStorageFrom(arryofProducts);
   }
+
+  // function filteByCategory (){
+  //   let filter = localStorage.getItem(products)
+  //   console.log(filter)
+  // }
+  // filteByCategory()
+  function listview (){
+    let list = document.querySelector('.list')
+    list.addEventListener('click' , () =>{
+    productContainer.style.flexDirection = "column";
+    })
+  }
+listview();

@@ -178,19 +178,12 @@ function removefromcart() {
   }
 }
 
-function getDataFromLocalStorage() {
-  let data = window.localStorage.getItem("products");
-  if (data) {
-    let products = JSON.parse(data);
-    addElementsToPageFrom(products);
-  }
-}
 
 OnLoadProuNum(); // this fun must run firstly
 displayCart(); // should display when page load
 addtocart();
 removefromcart();
-getDataFromLocalStorage()
+// getDataFromLocalStorage()
 
 
 if (typeof module !== "undefined") {
